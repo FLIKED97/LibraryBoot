@@ -117,8 +117,10 @@ public class Book {
         this.temporaryBool = temporaryBool;
     }
     public boolean isOverdue() {
-        long diffDays = (new Date().getTime() - getBorrowedDate().getTime()) / (24 * 60 * 60 * 100);
+        long diffDays = (new Date().getTime() - getBorrowedDate().getTime()) / (24 * 60 * 60 * 100) / 10;
+        System.out.println(diffDays);
         return diffDays >= 10;
+
     }
 
     public String getTextColor() {
